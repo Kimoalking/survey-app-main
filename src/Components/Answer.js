@@ -4,6 +4,7 @@ import CheckBox from './CheckBox';
 import RadioButton from './RadioButton';
 import TextBox from './TextBox';
 import DateControl from './DateControl';
+import TimeControl from './TimeControl';
 import ControlType from '../Utils/ContolType';
 export default function Answer(props) {
   console.log(props)
@@ -23,6 +24,9 @@ export default function Answer(props) {
       
       {props.controlType === ControlType.Date &&
         <DateControl></DateControl>
+      }
+      {props.controlType === ControlType.Time &&
+        <TimeControl></TimeControl>
       }
   
     </Grid>
