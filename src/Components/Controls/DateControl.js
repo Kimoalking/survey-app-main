@@ -2,15 +2,16 @@ import * as React from 'react';
 import TextField from '@mui/material/TextField';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
-import { TimePicker } from '@mui/x-date-pickers/TimePicker';
+import DatePicker from '@mui/lab/DatePicker';
+import WithCommentsBlock from '../../HOC/WithCommentsBox';
 
-export default function DateControl() {
+const DateControl= (props) => {
   const [value, setValue] = React.useState(null);
 
   
   return (
     <LocalizationProvider dateAdapter={AdapterDateFns}>
-      <TimePicker
+      <DatePicker
         value={value}
         onChange={(newValue) => {
           setValue(newValue);
@@ -20,3 +21,4 @@ export default function DateControl() {
     </LocalizationProvider>
   );
 }
+export default WithCommentsBlock(DateControl);

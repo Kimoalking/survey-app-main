@@ -3,7 +3,7 @@ import SurveyPage from './SurveyPage';
 import Paper from '@mui/material/Paper';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
-import Pages from '../Utils/DemoData'
+import Pages from '../../Utils/DemoData'
 export default function Survey() {
     
     const[activePageSequence, setActivePageSequence] = useState(1);

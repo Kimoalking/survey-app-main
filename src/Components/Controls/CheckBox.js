@@ -1,7 +1,7 @@
 import * as React from 'react';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
-import WithCommentsBlock from '../HOC/WithCommentsBox';
+import WithCommentsBlock from '../../HOC/WithCommentsBox';
 
 const CheckBox = (props) => {
   const answerElements = props.data.map((answer) =>

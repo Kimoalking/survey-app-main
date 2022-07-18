@@ -1,11 +1,10 @@
 import React from 'react'
-import QuestionItem from './QuestionItem'
+import QuestionItem from '../UserControls/QuestionItem'
 
 export default function SurveyPage(props) {
-    debugger;
+    
     const questionList = props.data.questions.map((question) =>
     {
-    debugger;
       return  (<QuestionItem key={question.id} data={question} controlType={question.controlType} />)
     }
     );

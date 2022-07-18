@@ -2,7 +2,7 @@ import * as React from 'react';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
-import WithCommentsBlock from '../HOC/WithCommentsBox';
+import WithCommentsBlock from '../../HOC/WithCommentsBox';
 
 const RadioButton =(props)=> {
   const answerElements = props.data.map((answer) =>
