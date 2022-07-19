@@ -1,7 +1,7 @@
 import * as React from 'react';
 import MatrixQuestionItem from '../UserControls/MatrixQuestionItem'
 import WithCommentsBlock from '../../HOC/WithCommentsBox';
-
+import '../../Context/css/custom.css'
 const MatrixControl = (props) => {
   
     const questionList = props.data.map((question) =>
@@ -9,17 +9,8 @@ const MatrixControl = (props) => {
       return  (<MatrixQuestionItem key={question.id} data={question} controlType={question.controlType} isSurveyFormat={props.isSurveyFormat}/>)
     }
     ); 
-    var MatrixHeader = <th>Question</th>;
-    if(props.isSurveyFormat)
-    {
-      props.data.map((answersArray) => {
-        var FirstQuestionArray = answersArray.answers[0];
-        for (var i = 0; i < FirstQuestionArray.length; i++) {
-          debugger;
-          FirstQuestionArray+=<th key={FirstQuestionArray[i].id}>{FirstQuestionArray[i].title}</th>;
-        };
-      });
-    }
+    var MatrixHeader = (<><th key="123">Question</th><th className='customSpacing'><table width="100%"><thead><th>yes</th><th>No</th><th>NA</th></thead></table></th></>);
+    
     console.log(props) ;
     
     return (

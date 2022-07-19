@@ -1,0 +1,15 @@
+
+  .customSpacing{
+     padding: 0 !important;
+  }
+  .customSpacing td {
+    border-bottom-width: 0 !important;
+    text-align: center;
+    text-transform: capitalize;
+  }
+  .radio-buttons-tables td {
+    padding: 1rem !important;
+  }
+  .radio-buttons-tables label {
+    margin : 0 !important;
+  }

@@ -14,7 +14,7 @@ import MatrixControl from '../Controls/MatrixControl';
 
 
 export default function Answer(props) {
-  debugger;
+ 
   //console.log(props)
   return (
     <Grid item xs={12}>
