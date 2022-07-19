@@ -14,7 +14,7 @@ import MatrixControl from '../Controls/MatrixControl';
 
 
 export default function Answer(props) {
-  //debugger;
+  debugger;
   //console.log(props)
   return (
     <Grid item xs={12}>
@@ -23,7 +23,7 @@ export default function Answer(props) {
       }
 
       {props.controlType === ControlType.RadioButton &&
-        <RadioButton hasComments={props.hasComments} data={props.data}></RadioButton>
+        <RadioButton hasComments={props.hasComments} data={props.data} isSurveyFormat={props.isSurveyFormat || false}></RadioButton>
       }
 
       {props.controlType === ControlType.TextBox &&

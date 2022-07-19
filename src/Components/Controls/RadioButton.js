@@ -5,8 +5,18 @@ import RadioGroup from '@mui/material/RadioGroup';
 import WithCommentsBlock from '../../HOC/WithCommentsBox';
 
 const RadioButton =(props)=> {
-  const answerElements = props.data.map((answer) =>
-    <FormControlLabel key={answer.id} value={answer.id} control={<Radio />} label={answer.title} />
+  const answerElements = props.data.map((answer) =>{
+    
+    const RadioLabel = (props.isSurveyFormat===true ? "" : answer.title); //answer.title
+    if(props.isSurveyFormat)
+    {
+      return <td><FormControlLabel key={answer.id} value={answer.id} control={<Radio />} label={RadioLabel} /></td>
+    }else{
+      return <FormControlLabel key={answer.id} value={answer.id} control={<Radio />} label={answer.title} />
+    }
+      
+  }
+    
   );
   return (
     <RadioGroup

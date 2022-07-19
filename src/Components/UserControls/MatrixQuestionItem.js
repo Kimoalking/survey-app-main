@@ -8,18 +8,20 @@ import Answer from './Answer.js';
 export default function MatrixQuestionItem(props) {
   debugger;
   if(props.isSurveyFormat)
-  {
+  { 
     return (
-      <tr>
-      <td><Question questionTitle={props.data.title}></Question></td>
-      <td><Answer hasComments={props.data.hasComments} controlType={props.controlType} data={props.data.answers} isSurveyFormat={props.isSurveyFormat}></Answer></td>
-      </tr>
+      <>
+        <tr>
+        <td><Question questionTitle={props.data.title}></Question></td>
+        <Answer hasComments={props.data.hasComments} controlType={props.controlType} data={props.data.answers} isSurveyFormat={props.isSurveyFormat}></Answer>
+        </tr>
+      </>
     );
   }else{
   return (
     <tr>
-    <td><Question questionTitle={props.data.title}></Question></td>
-    <td><Answer hasComments={props.data.hasComments} controlType={props.controlType} data={props.data.answers}></Answer></td> 
+      <td><Question questionTitle={props.data.title}></Question></td>
+      <td><Answer hasComments={props.data.hasComments} controlType={props.controlType} data={props.data.answers}></Answer></td> 
     </tr>
   );
   }

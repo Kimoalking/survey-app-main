@@ -157,7 +157,7 @@ const Pages = [
                 "title": "Tell us more about yourself",
                 "controlType": "11",
                 "isSurveyFormat": true,
-                "hasComments": true,
+                "hasComments": false,
                 "answers": [
                     {
                         "id": uuidv4(),
@@ -172,6 +172,10 @@ const Pages = [
                         {
                             "id": uuidv4(),
                             "title": "No",
+                        },
+                        {
+                            "id": uuidv4(),
+                            "title": "N/A",
                         }
                         ]
                     },
@@ -188,6 +192,10 @@ const Pages = [
                             {
                                 "id": uuidv4(),
                                 "title": "No",
+                            },
+                            {
+                                "id": uuidv4(),
+                                "title": "N/A",
                             }
                             ]
                     },
@@ -204,6 +212,10 @@ const Pages = [
                             {
                                 "id": uuidv4(),
                                 "title": "No",
+                            },
+                            {
+                                "id": uuidv4(),
+                                "title": "N/A",
                             }
                             ]
                     },
@@ -220,6 +232,10 @@ const Pages = [
                             {
                                 "id": uuidv4(),
                                 "title": "No",
+                            },
+                            {
+                                "id": uuidv4(),
+                                "title": "N/A",
                             }
                             ]
                     }
