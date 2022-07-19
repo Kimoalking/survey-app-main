@@ -5,7 +5,7 @@ export default function SurveyPage(props) {
     
     const questionList = props.data.questions.map((question) =>
     {
-      return  (<QuestionItem key={question.id} data={question} controlType={question.controlType} />)
+      return  (<QuestionItem key={question.id} data={question} controlType={question.controlType} isSurveyFormat={question.isSurveyFormat}/>)
     }
     );
 

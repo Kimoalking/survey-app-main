@@ -44,7 +44,7 @@ export default function Answer(props) {
         <DateRangeControl></DateRangeControl>
       }
       {props.controlType === ControlType.MatrixControl &&
-        <MatrixControl  hasComments={props.hasComments} controlType={props.controlType} data={props.data}></MatrixControl>
+        <MatrixControl  hasComments={props.hasComments} controlType={props.controlType} data={props.data} isSurveyFormat={props.isSurveyFormat}></MatrixControl>
       }
   
     </Grid>

@@ -3,25 +3,22 @@ import MatrixQuestionItem from '../UserControls/MatrixQuestionItem'
 import WithCommentsBlock from '../../HOC/WithCommentsBox';
 
 const MatrixControl = (props) => {
-  
+  //debugger;
     const questionList = props.data.map((question) =>
     {
-      return  (<MatrixQuestionItem key={question.id} data={question} controlType={question.controlType} />)
+      return  (<MatrixQuestionItem key={question.id} data={question} controlType={question.controlType} isSurveyFormat={props.isSurveyFormat}/>)
     }
     );
     console.log(props)
-    debugger; 
+    
     return (
       <>
-      
-          <h2>{props.data.title}</h2>
-          <table className="table table-bordered">
-      <tbody>
-      
-          {questionList}
-        
-       </tbody>
-      </table>
+        <h2>{props.data.title}</h2>
+        <table className="table table-bordered">
+          <tbody>
+            {questionList}
+          </tbody>
+        </table>
       </>
   )
 }

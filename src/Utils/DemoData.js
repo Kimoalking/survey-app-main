@@ -110,7 +110,8 @@ const Pages = [
                 "id": uuidv4(),
                 "title": "Rate your skills ",
                 "controlType": "11",
-                "hasComments": true,
+                "isSurveyFormat": false,
+                "hasComments": false,
                 "answers": [
                     {
                         "id": uuidv4(),
@@ -155,6 +156,7 @@ const Pages = [
                 "id": uuidv4(),
                 "title": "Tell us more about yourself",
                 "controlType": "11",
+                "isSurveyFormat": true,
                 "hasComments": true,
                 "answers": [
                     {
