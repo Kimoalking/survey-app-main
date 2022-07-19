@@ -6,7 +6,7 @@ import Answer from './Answer.js';
 
 
 export default function MatrixQuestionItem(props) {
-  debugger;
+ 
   if(props.isSurveyFormat)
   { 
     return (

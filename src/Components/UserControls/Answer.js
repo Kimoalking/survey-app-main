@@ -14,7 +14,7 @@ import MatrixControl from '../Controls/MatrixControl';
 
 
 export default function Answer(props) {
- 
+
   //console.log(props)
   return (
     <Grid item xs={12}>
@@ -44,7 +44,7 @@ export default function Answer(props) {
         <DateRangeControl></DateRangeControl>
       }
       {props.controlType === ControlType.MatrixControl &&
-        <MatrixControl  hasComments={props.hasComments} controlType={props.controlType} data={props.data} isSurveyFormat={props.isSurveyFormat}></MatrixControl>
+        <MatrixControl  hasComments={props.hasComments} controlType={props.controlType} data={props.data} isSurveyFormat={props.isSurveyFormat} mainColumnTitle={props.mainColumnTitle}></MatrixControl>
       }
   
     </Grid>

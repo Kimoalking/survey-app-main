@@ -111,6 +111,7 @@ const Pages = [
                 "title": "Rate your skills ",
                 "controlType": "11",
                 "isSurveyFormat": false,
+                "mainColumnTitle": "Fell Free to answer the below",
                 "hasComments": false,
                 "answers": [
                     {
@@ -157,6 +158,7 @@ const Pages = [
                 "title": "Tell us more about yourself",
                 "controlType": "11",
                 "isSurveyFormat": true,
+                "mainColumnTitle": "Matrix Me", 
                 "hasComments": false,
                 "answers": [
                     {
@@ -176,8 +178,16 @@ const Pages = [
                         {
                             "id": uuidv4(),
                             "title": "N/A",
+                        },
+                        {
+                            "id": uuidv4(),
+                            "title": "Never Tell",
+                        },
+                        {
+                            "id": uuidv4(),
+                            "title": "Angry of this",
                         }
-                        ]
+                    ]
                     },
                     {
                         "id": uuidv4(),
@@ -196,8 +206,16 @@ const Pages = [
                             {
                                 "id": uuidv4(),
                                 "title": "N/A",
+                            },
+                            {
+                                "id": uuidv4(),
+                                "title": "Never Tell",
+                            },
+                            {
+                                "id": uuidv4(),
+                                "title": "Angry of this",
                             }
-                            ]
+                        ]
                     },
                     {
                         "id": uuidv4(),
@@ -216,8 +234,16 @@ const Pages = [
                             {
                                 "id": uuidv4(),
                                 "title": "N/A",
+                            },
+                            {
+                                "id": uuidv4(),
+                                "title": "Never Tell",
+                            },
+                            {
+                                "id": uuidv4(),
+                                "title": "Angry of this",
                             }
-                            ]
+                        ]
                     },
                     {
                         "id": uuidv4(),
@@ -236,8 +262,16 @@ const Pages = [
                             {
                                 "id": uuidv4(),
                                 "title": "N/A",
+                            },
+                            {
+                                "id": uuidv4(),
+                                "title": "Never Tell",
+                            },
+                            {
+                                "id": uuidv4(),
+                                "title": "Angry of this",
                             }
-                            ]
+                        ]
                     }
                 ]
             }
