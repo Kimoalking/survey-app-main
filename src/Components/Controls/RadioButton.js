@@ -7,7 +7,7 @@ import '../../Context/css/custom.css'
 
 const RadioButton =(props)=> {
   const answerElements = props.data.map((answer) =>{
-    debugger;
+   
     const RadioLabel = (props.isSurveyFormat===true ? "" : answer.title); //answer.title
     if(props.isSurveyFormat)
     {
