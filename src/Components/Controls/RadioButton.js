@@ -17,6 +17,7 @@ const handleChange =(event) =>{
   console.log("IsChecked=" + event.target.checked); //IsChecked property
 }
 //<input name={props.name} type="radio" value={answer.id}/>
+//https://mui.com/material-ui/react-radio-button/
 if(props.isSurveyFormat === true && props.data.length > 1)
 {
   const radios = props.data.map((answer, index) =>
