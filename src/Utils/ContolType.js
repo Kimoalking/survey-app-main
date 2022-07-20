@@ -7,10 +7,11 @@ Time: "3",        // Time
 DateTime: "4",    // Date Time //Not Yet
 Smily: "5",       // Smily
 CheckBox: "6",    // Check Box
-RadioButton: "7", // Radio Button
+RadioGroupButton: "7", // Radio Group Button
 Rating: "8",      // Rating (Stars)
 NPS: "9",         // NPS
 DateRange: "10",   // Date Range[From - To]
-MatrixControl: "11"   // Set of controls for same answers
+MatrixControl: "11",   // Set of controls for same answers
+RadioButton: "12" // Radio Button
 };
 export default ControlType;

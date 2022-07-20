@@ -1,33 +1,56 @@
-import * as React from 'react';
-import FormControlLabel from '@mui/material/FormControlLabel';
+import React, {useState} from 'react';
 import Radio from '@mui/material/Radio';
-import RadioGroup from '@mui/material/RadioGroup';
 import WithCommentsBlock from '../../HOC/WithCommentsBox';
 import '../../Context/css/custom.css'
 
 const RadioButton =(props)=> {
-  const answerElements = props.data.map((answer) =>{
+  debugger;
+const [selectedValue, setSelectedValue] = useState("a");
+const answerElements = [];
+const handleChange =(event) =>{
+
+
+
+  setSelectedValue(event.target.value);
+  console.log("QuestionId=" + event.target.name);//QuestionId
+  console.log("Radio ID=" + event.target.value); //Radio ID
+  console.log("IsChecked=" + event.target.checked); //IsChecked property
+}
+//<input name={props.name} type="radio" value={answer.id}/>
+if(props.isSurveyFormat === true && props.data.length > 1)
+{
+  const radios = props.data.map((answer, index) =>
+  
+      <td key={index}>
+        <Radio
+        checked={selectedValue === answer.id}
+        onChange={(event1) => handleChange(event1)}
+        value={answer.id}
+        name={props.name}
+      />
+        <label htmlFor={props.name}>{(props.isSurveyFormat===true ? "" : answer.title)}</label>
+      </td>
    
-    const RadioLabel = (props.isSurveyFormat===true ? "" : answer.title); //answer.title
-    if(props.isSurveyFormat)
-    {
-      return  <td><FormControlLabel key={answer.id} value={answer.id} control={<Radio />} label={RadioLabel} /></td>
-    }else{
-      return <FormControlLabel key={answer.id} value={answer.id} control={<Radio />} label={answer.title} />
-    }
-      
-  }
-    
-  );
-  return (
-    <RadioGroup
-      row
-      aria-labelledby="demo-row-radio-buttons-group-label"
-      name="row-radio-buttons-group"
-      className='radio-buttons-tables'
-    >
-      {answerElements}
-    </RadioGroup>
-  );
+);
+answerElements.push(radios);
+
+}else{
+  const radios = props.data.map((answer, index) =>
+  
+      <span key={index}>
+        <Radio
+        checked={selectedValue === answer.id}
+        onChange={(event1) => handleChange(event1)}
+        value={answer.id}
+        name={props.name}
+      />
+        <label htmlFor={props.name}>{(props.isSurveyFormat===true ? "" : answer.title)}</label>
+      </span>
+   
+);
+answerElements.push(radios);
+}
+  
+return (answerElements);
 }
 export default WithCommentsBlock(RadioButton);

@@ -1,9 +1,9 @@
 import { v4 as uuidv4 } from 'uuid';
 const Pages = [
     {
-//1: Textbox, 2:Date. 6: CheckBox,7: RadioButton
+//1: Textbox, 2:Date. 6: CheckBox,7: RadioGroupButton, 12 RadioButton control
         "id": uuidv4(), 
-        "title": "1: Textbox, 2:Date. 6: CheckBox,7: RadioButton",
+        "title": "1: Textbox, 2:Date. 6: CheckBox,7: RadioGroupButton , 12 RadioButton",
         "sequenceNo": 1,
         "questions": [
             {
@@ -67,6 +67,22 @@ const Pages = [
                         "title": "Very Disatisfied",
                     },
                 ]
+            },
+            {
+                "id": uuidv4(),
+                "title": "Gender",
+                "controlType": "12",
+                "hasComments": false,
+                "answers": [
+                    {
+                        "id": uuidv4(),
+                        "title": "Male",
+                    },
+                    {
+                        "id": uuidv4(),
+                        "title": "Female",
+                    }
+                ]
             }
         ]
     },
@@ -100,10 +116,10 @@ const Pages = [
             }
         ]
     },
-//11:Matrix using Rating Control
+//11:Matrix using 1 possible Answer Control 
     {
         "id": uuidv4(), 
-        "title": "11:Matrix using Rating Control",
+        "title": "11:Matrix using 1 possible Answer Control",
         "sequenceNo": 3,
         "questions": [
             {
@@ -147,10 +163,10 @@ const Pages = [
             
         ]
     },
-//11: Matrix using Radio Control
+    //12: Matrix using multi possible Answers Control 
     {
         "id": uuidv4(), 
-        "title": "11: Matrix using Radio Control",
+        "title": "12: Matrix using multi possible Answers Control ",
         "sequenceNo": 4,
         "questions": [
             {
@@ -164,7 +180,7 @@ const Pages = [
                     {
                         "id": uuidv4(),
                         "title": "Are you Married?",
-                        "controlType": "7",
+                        "controlType": "12",
                         "hasComments": false,
                         "answers": [
                         {
@@ -185,14 +201,14 @@ const Pages = [
                         },
                         {
                             "id": uuidv4(),
-                            "title": "Angry of this",
+                            "title": "Cool",
                         }
                     ]
                     },
                     {
                         "id": uuidv4(),
                         "title": "Do you have Master College Degree?",
-                        "controlType": "7",
+                        "controlType": "12",
                         "hasComments": false,
                         "answers": [
                             {
@@ -213,14 +229,14 @@ const Pages = [
                             },
                             {
                                 "id": uuidv4(),
-                                "title": "Angry of this",
+                                "title": "Cool",
                             }
                         ]
                     },
                     {
                         "id": uuidv4(),
                         "title": "Did you do covid test in the past 14 days?",
-                        "controlType": "7",
+                        "controlType": "12",
                         "hasComments": false,
                         "answers": [
                             {
@@ -241,14 +257,14 @@ const Pages = [
                             },
                             {
                                 "id": uuidv4(),
-                                "title": "Angry of this",
+                                "title": "Cool",
                             }
                         ]
                     },
                     {
                         "id": uuidv4(),
                         "title": "Do you have lanuch today?",
-                        "controlType": "7",
+                        "controlType": "12",
                         "hasComments": false,
                         "answers": [
                             {
@@ -269,7 +285,7 @@ const Pages = [
                             },
                             {
                                 "id": uuidv4(),
-                                "title": "Angry of this",
+                                "title": "Cool",
                             }
                         ]
                     }
@@ -278,6 +294,7 @@ const Pages = [
             
         ]
     }
+
 
 ];
 export default Pages;
