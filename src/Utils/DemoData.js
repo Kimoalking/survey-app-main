@@ -4,7 +4,7 @@ const Pages = [
 //1: Textbox, 2:Date. 6: CheckBox,7: RadioGroupButton, 12 RadioButton control
         "id": uuidv4(), 
         "title": "1: Textbox, 2:Date. 6: CheckBox,7: RadioGroupButton , 12 RadioButton",
-        "sequenceNo": 2,
+        "sequenceNo": 1,
         "questions": [
             {
                 "id": uuidv4(),
@@ -48,7 +48,7 @@ const Pages = [
                 "id": uuidv4(),
                 "title": "Are you satisfied",
                 "controlType": "7",
-                "hasComments": true,
+                "hasComments": false,
                 "answers": [
                     {
                         "id": uuidv4(),
@@ -86,12 +86,12 @@ const Pages = [
             }
         ]
     },
-//Kamal Page
-//3:Time controller,8:Rating,10:DateRange
+    //Kamal Page
+    //3:Time controller,8:Rating,10:DateRange
     {
         "id": uuidv4(), 
         "title": "3:Time controller,8:Rating,10:DateRange",
-        "sequenceNo": 3,
+        "sequenceNo": 2,
         "questions": [
             {
                 "id": uuidv4(),
@@ -116,11 +116,11 @@ const Pages = [
             }
         ]
     },
-//11:Matrix using 1 possible Answer Control 
+    //11:Matrix using 1 possible Answer Control 
     {
         "id": uuidv4(), 
         "title": "11:Matrix using 1 possible Answer Control",
-        "sequenceNo": 4,
+        "sequenceNo": 3,
         "questions": [
             {
                 "id": uuidv4(),
@@ -167,7 +167,7 @@ const Pages = [
     {
         "id": uuidv4(), 
         "title": "12: Matrix using multi possible Answers Control ",
-        "sequenceNo": 1,
+        "sequenceNo": 4,
         "questions": [
             {
                 "id": "123213123",//uuidv4(),

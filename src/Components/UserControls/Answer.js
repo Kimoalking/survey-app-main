@@ -22,7 +22,7 @@ export default function Answer(props) {
   if(props.isSurveyFormat=== true && props.controlType === ControlType.RadioButton)
   {
     return (
-      <RadioButton hasComments={props.hasComments} data={props.data} isSurveyFormat={props.isSurveyFormat || false} name={props.name} mainQuestionId={props.mainQuestionId}></RadioButton>
+      <RadioButton hasComments={props.hasComments} data={props.data} isSurveyFormat={props.isSurveyFormat || false} questionId={props.questionId} mainQuestionId={props.mainQuestionId}></RadioButton>
     )
   }
 
@@ -41,11 +41,11 @@ export default function Answer(props) {
       }
 
       {props.controlType === ControlType.TextBox &&
-        <TextBox></TextBox>
+        <TextBox questionId={props.questionId} mainQuestionId={props.mainQuestionId} IsHOC={false} ></TextBox>
       }
       
       {props.controlType === ControlType.Date &&
-        <DateControl></DateControl>
+        <DateControl questionId={props.questionId} mainQuestionId={props.mainQuestionId}></DateControl>
       }
 
       {props.controlType === ControlType.Time &&

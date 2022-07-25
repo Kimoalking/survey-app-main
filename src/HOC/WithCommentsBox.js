@@ -8,7 +8,7 @@ function WithCommentsBlock(BaseComponent) {
             <>
                 <BaseComponent {...props}></BaseComponent>
                 {props.hasComments &&
-                    <TextBox {...props}></TextBox>
+                    <TextBox {...props} IsHOC={true} ></TextBox>
                 }
             </>
         );

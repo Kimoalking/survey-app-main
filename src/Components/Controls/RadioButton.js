@@ -14,7 +14,7 @@ const answerElements = [];
 const [Answers, setAnswers] = useRecoilState(AnswersState)
 //console.log("UpdateAnswer",Answers);
 
-const UpdateAnswers = (qId, ansId) => {
+const SetValue = (qId, ansId) => {
   
   let filtered = Answers.filter(function (a) {
     if (a.questionId !== qId) return a;
@@ -24,16 +24,18 @@ const UpdateAnswers = (qId, ansId) => {
   setAnswers([...filtered, {mainQuestionId: props.mainQuestionId, questionId: qId,answerValue:[ansId], commentValue:null}]);
 
   //Start: remove the fist index if it is empty object
-  if(Answers[0].questionId === undefined || Answers[0].questionId === "")
+  if(Answers.length>1)
   {
-    debugger;
-    setAnswers((Answers) => Answers.filter((_, index) => index !== 0))//https://www.techiediaries.com/remove-element-react-18-usestate-array/
-    console.log("removing first index",Answers);
+    if(Answers[0].questionId === undefined || Answers[0].questionId === "")
+    {
+      setAnswers((Answers) => Answers.filter((_, index) => index !== 0))//https://www.techiediaries.com/remove-element-react-18-usestate-array/
+      console.log("removing first index",Answers);
+    }
   }
   //End: remove the fist index if it is empty object
 };
 
-const GetAnswers = (qId) => {
+const GetValue = (qId) => {
 
   let filtered = Answers.filter(function (a) {
     if (a.questionId === qId) return a;
@@ -45,7 +47,7 @@ const GetAnswers = (qId) => {
   }
 };
 
-//<input name={props.name} type="radio" value={answer.id}/>
+//<input name={props.questionId} type="radio" value={answer.id}/>
 //https://mui.com/material-ui/react-radio-button/
 if(props.isSurveyFormat === true && props.data.length > 1)
 {
@@ -53,14 +55,14 @@ if(props.isSurveyFormat === true && props.data.length > 1)
   
       <td key={index}>
         <Radio
-        checked={GetAnswers(props.name) == answer.title}
+        checked={GetValue(props.questionId) == answer.title}
         onChange={() => {
-          UpdateAnswers(props.name, answer.title);
+          SetValue(props.questionId, answer.title);
         }}
         value={answer.title}
-        name={props.name}
+        name={props.questionId}
       />
-        <label htmlFor={props.name}>{(props.isSurveyFormat===true ? "" : answer.title)}</label>
+        <label htmlFor={props.questionId}>{(props.isSurveyFormat===true ? "" : answer.title)}</label>
       </td>
    
 );
@@ -71,14 +73,14 @@ answerElements.push(radios);
   
       <span key={index}>
         <Radio
-        checked={GetAnswers(props.name) === answer.title}
+        checked={GetValue(props.questionId) === answer.title}
         onChange={() => {
-          UpdateAnswers(props.name, answer.title);
+          SetValue(props.questionId, answer.title);
         }}
         value={answer.id}
-        name={props.name}
+        name={props.questionId}
         />
-        <label htmlFor={props.name}>{(props.isSurveyFormat===true ? "" : answer.title)}</label>
+        <label htmlFor={props.questionId}>{(props.isSurveyFormat===true ? "" : answer.title)}</label>
       </span>
    
 );

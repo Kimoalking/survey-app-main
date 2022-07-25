@@ -10,7 +10,13 @@ export const AnswersState = atom({
             questionId:'',
             answerValue:[],
             commentValue: ''
-        }
+        },
+        // {
+        //     mainQuestionId: '9992', 
+        //     questionId: '1119', 
+        //     answerValue: [], 
+        //     commentValue: 'sf'
+        // }
     ]
 })
 
