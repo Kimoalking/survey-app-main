@@ -27,7 +27,7 @@ const UpdateAnswers = (qId, ansId) => {
   if(Answers[0].questionId === undefined || Answers[0].questionId === "")
   {
     debugger;
-    setAnswers((Answers) => Answers.filter((_, index) => index !== 0))
+    setAnswers((Answers) => Answers.filter((_, index) => index !== 0))//https://www.techiediaries.com/remove-element-react-18-usestate-array/
     console.log("removing first index",Answers);
   }
   //End: remove the fist index if it is empty object
