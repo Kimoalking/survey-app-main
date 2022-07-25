@@ -13,7 +13,7 @@ const DateControl= (props) => {
 
   const [value, setValue] = React.useState(null);
 
-  const SetValue = (Control) => {
+  const SetValue = (value) => {
     debugger;
 
     //alert(txtControl.target.value);
@@ -21,7 +21,7 @@ const DateControl= (props) => {
       let filtered = Answers.filter(function (a) {
         if (a.questionId !== props.questionId) return a;
       });
-      setAnswers([...filtered, {mainQuestionId: props.mainQuestionId, questionId: props.questionId,answerValue:[Control], commentValue:null}]);
+      setAnswers([...filtered, {mainQuestionId: props.mainQuestionId, questionId: props.questionId,answerValue:[value], commentValue:null}]);
     }
 
     //Start: remove the fist index if it is empty object
