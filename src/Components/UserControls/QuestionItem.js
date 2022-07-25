@@ -9,7 +9,7 @@ export default function QuestionItem(props) {
     <Grid item xs={12}>
       <FormControl>
         <Question questionTitle={props.data.title}></Question>
-        <Answer hasComments={props.data.hasComments} controlType={props.controlType} data={props.data.answers} isSurveyFormat={props.isSurveyFormat} mainColumnTitle={props.mainColumnTitle}></Answer>
+        <Answer hasComments={props.data.hasComments} controlType={props.controlType} data={props.data.answers} isSurveyFormat={props.isSurveyFormat} mainColumnTitle={props.mainColumnTitle} mainQuestionId={props.mainQuestionId}></Answer>
       </FormControl>
     </Grid>
   );

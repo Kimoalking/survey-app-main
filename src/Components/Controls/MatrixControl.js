@@ -8,7 +8,7 @@ const MatrixControl = (props) => {
     
   const questionList = props.data.map((question) =>
   {
-    return  (<MatrixQuestionItem key={question.id} data={question} controlType={question.controlType} isSurveyFormat={props.isSurveyFormat}/>)
+    return  (<MatrixQuestionItem key={question.id} data={question} controlType={question.controlType} isSurveyFormat={props.isSurveyFormat} mainQuestionId={props.mainQuestionId}/>)
   }
   ); 
   //var MatrixHeader  = (<><th key="123">Question</th><th className='customSpacing'><table width="100%"><thead><th>yes</th><th>No</th><th>NA</th></thead></table></th></>);
@@ -28,8 +28,8 @@ const MatrixControl = (props) => {
   }
 
 
-console.log(questionList) ;
-  console.log(MatrixHeader) ;
+//console.log(questionList) ;
+//console.log(MatrixHeader) ;
   
   return (
     <div key={uuidv4()}>

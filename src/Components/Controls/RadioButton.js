@@ -1,21 +1,50 @@
-import React, {useState} from 'react';
+import React from 'react';
 import Radio from '@mui/material/Radio';
 import WithCommentsBlock from '../../HOC/WithCommentsBox';
 import '../../Context/css/custom.css'
 
+import {useRecoilState, useRecoilValue} from 'recoil'
+import {AnswersState} from  '../../Hooks/AnswersAtom.js'
+//https://www.section.io/engineering-education/react-recoil-state-management/
+let ControlProps = null
 const RadioButton =(props)=> {
-  debugger;
-const [selectedValue, setSelectedValue] = useState("a");
+  //console.log("Radio Props", props);
+  ControlProps = props;
 const answerElements = [];
-const handleChange =(event) =>{
+const [Answers, setAnswers] = useRecoilState(AnswersState)
+//console.log("UpdateAnswer",Answers);
 
+const UpdateAnswers = (qId, ansId) => {
+  
+  let filtered = Answers.filter(function (a) {
+    if (a.questionId !== qId) return a;
+  });
+  
+  
+  setAnswers([...filtered, {mainQuestionId: props.mainQuestionId, questionId: qId,answerValue:[ansId], commentValue:null}]);
 
+  //Start: remove the fist index if it is empty object
+  if(Answers[0].questionId === undefined || Answers[0].questionId === "")
+  {
+    debugger;
+    setAnswers((Answers) => Answers.filter((_, index) => index !== 0))
+    console.log("removing first index",Answers);
+  }
+  //End: remove the fist index if it is empty object
+};
 
-  setSelectedValue(event.target.value);
-  console.log("QuestionId=" + event.target.name);//QuestionId
-  console.log("Radio ID=" + event.target.value); //Radio ID
-  console.log("IsChecked=" + event.target.checked); //IsChecked property
-}
+const GetAnswers = (qId) => {
+
+  let filtered = Answers.filter(function (a) {
+    if (a.questionId === qId) return a;
+  });
+  if ((filtered || []).length > 0) {
+    return filtered[0].answerValue;
+  } else {
+    return null;
+  }
+};
+
 //<input name={props.name} type="radio" value={answer.id}/>
 //https://mui.com/material-ui/react-radio-button/
 if(props.isSurveyFormat === true && props.data.length > 1)
@@ -24,9 +53,11 @@ if(props.isSurveyFormat === true && props.data.length > 1)
   
       <td key={index}>
         <Radio
-        checked={selectedValue === answer.id}
-        onChange={(event1) => handleChange(event1)}
-        value={answer.id}
+        checked={GetAnswers(props.name) == answer.title}
+        onChange={() => {
+          UpdateAnswers(props.name, answer.title);
+        }}
+        value={answer.title}
         name={props.name}
       />
         <label htmlFor={props.name}>{(props.isSurveyFormat===true ? "" : answer.title)}</label>
@@ -40,11 +71,13 @@ answerElements.push(radios);
   
       <span key={index}>
         <Radio
-        checked={selectedValue === answer.id}
-        onChange={(event1) => handleChange(event1)}
+        checked={GetAnswers(props.name) === answer.title}
+        onChange={() => {
+          UpdateAnswers(props.name, answer.title);
+        }}
         value={answer.id}
         name={props.name}
-      />
+        />
         <label htmlFor={props.name}>{(props.isSurveyFormat===true ? "" : answer.title)}</label>
       </span>
    

@@ -22,7 +22,7 @@ import WithCommentsBlock from '../../HOC/WithCommentsBox';
     key: 'selection',
   }
   function SetDateRange(dateRange){
-    console.log(dateRange);
+    //console.log(dateRange);
     setState(dateRange)
   }
   return (

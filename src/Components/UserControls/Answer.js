@@ -17,11 +17,12 @@ import MatrixControl from '../Controls/MatrixControl';
 
 export default function Answer(props) {
 
+  
   //console.log(props)
   if(props.isSurveyFormat=== true && props.controlType === ControlType.RadioButton)
   {
     return (
-      <RadioButton hasComments={props.hasComments} data={props.data} isSurveyFormat={props.isSurveyFormat || false} name={props.name}></RadioButton>
+      <RadioButton hasComments={props.hasComments} data={props.data} isSurveyFormat={props.isSurveyFormat || false} name={props.name} mainQuestionId={props.mainQuestionId}></RadioButton>
     )
   }
 
@@ -57,7 +58,7 @@ export default function Answer(props) {
         <DateRangeControl></DateRangeControl>
       }
       {props.controlType === ControlType.MatrixControl &&
-        <MatrixControl  hasComments={props.hasComments} controlType={props.controlType} data={props.data} isSurveyFormat={props.isSurveyFormat} mainColumnTitle={props.mainColumnTitle}></MatrixControl>
+        <MatrixControl  hasComments={props.hasComments} controlType={props.controlType} data={props.data} isSurveyFormat={props.isSurveyFormat} mainColumnTitle={props.mainColumnTitle} mainQuestionId={props.mainQuestionId}></MatrixControl>
       }
       
   

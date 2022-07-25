@@ -5,19 +5,20 @@ import Answer from './Answer.js';
 
 
 export default function MatrixQuestionItem(props) {
+
   if(props.isSurveyFormat)
   { 
     return (
         <tr key={uuidv4()}>
           <td><Question questionTitle={props.data.title}></Question></td>
-          <Answer hasComments={props.data.hasComments} controlType={props.controlType} data={props.data.answers} isSurveyFormat={props.isSurveyFormat} name={props.data.id}></Answer>
+          <Answer  hasComments={props.data.hasComments} controlType={props.controlType} data={props.data.answers} isSurveyFormat={props.isSurveyFormat} name={props.data.id} mainQuestionId={props.mainQuestionId}></Answer>
         </tr>
     );
   }else{
   return (
     <tr key={uuidv4()}>
       <td><Question questionTitle={props.data.title}></Question></td>
-      <td><Answer hasComments={props.data.hasComments} controlType={props.controlType} data={props.data.answers}></Answer></td> 
+      <td><Answer hasComments={props.data.hasComments} controlType={props.controlType} data={props.data.answers} mainQuestionId={props.mainQuestionId}></Answer></td> 
     </tr>
   );
   }
