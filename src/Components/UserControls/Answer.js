@@ -49,7 +49,7 @@ export default function Answer(props) {
       }
 
       {props.controlType === ControlType.Time &&
-        <TimeControl></TimeControl>
+        <TimeControl hasComments={props.hasComments} data={props.data}  mainQuestionId={props.mainQuestionId} questionId={props.questionId}></TimeControl>
       }
       {props.controlType === ControlType.Rating &&
         <RatingControl></RatingControl>

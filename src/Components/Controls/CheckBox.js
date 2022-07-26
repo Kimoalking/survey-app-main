@@ -23,7 +23,7 @@ const CheckBox = (props) => {
     });
     if(QuestionObject !== undefined && QuestionObject.length >0 )
     {
-      AnswersObj = Object.assign([], QuestionObject[0].answerValue); 
+      AnswersObj = Object.assign([], QuestionObject[0].answerValue); //I was resving error when direct assigning array  //https://stackoverflow.com/questions/52492093/typeerror-cannot-add-property-1-object-is-not-extensible-at-array-push-anon
     }
     if(event.target.checked)
     {

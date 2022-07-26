@@ -97,7 +97,7 @@ const Pages = [
                 "id": uuidv4(),
                 "title": "last checkin time",
                 "controlType": "3",
-                "hasComments": true,
+                "hasComments": false,
                 "answers": []
             },
             {
