@@ -30,14 +30,14 @@ export default function Answer(props) {
   return (
     <Grid item xs={12}>
       {props.controlType === ControlType.CheckBox &&
-        <CheckBox hasComments={props.hasComments} data={props.data}></CheckBox>
+        <CheckBox hasComments={props.hasComments} data={props.data} questionId={props.questionId} mainQuestionId={props.mainQuestionId}></CheckBox>
       }
 
       {props.controlType === ControlType.RadioGroupButton &&
-        <RadioGroupButton hasComments={props.hasComments} data={props.data} isSurveyFormat={props.isSurveyFormat || false}></RadioGroupButton>
+        <RadioGroupButton hasComments={props.hasComments} data={props.data} isSurveyFormat={props.isSurveyFormat || false} mainQuestionId={props.mainQuestionId} questionId={props.questionId}></RadioGroupButton>
       }
       {props.controlType === ControlType.RadioButton &&
-        <RadioButton hasComments={props.hasComments} data={props.data} isSurveyFormat={props.isSurveyFormat || false} name={props.name}></RadioButton>
+        <RadioButton hasComments={props.hasComments} data={props.data} isSurveyFormat={props.isSurveyFormat || false} mainQuestionId={props.mainQuestionId} questionId={props.questionId}></RadioButton>
       }
 
       {props.controlType === ControlType.TextBox &&

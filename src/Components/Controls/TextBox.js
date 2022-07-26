@@ -10,7 +10,7 @@ const [Answers, setAnswers] = useRecoilState(AnswersState)
 
 console.log('AnswersAtom ', Answers)
     const SetValue = (Control) => {
-        debugger;
+  
 
         //alert(txtControl.target.value);
         if(props.IsHOC === true && props.mainQuestionId !== undefined && props.mainQuestionId !== "")
@@ -47,7 +47,7 @@ console.log('AnswersAtom ', Answers)
     };
 
     const GetValue = () =>{
-      debugger;
+
       //https://stackoverflow.com/questions/71460873/how-do-i-select-and-update-an-object-from-a-larger-group-of-objects-in-recoil
       
       if (Answers.length > 0) 
@@ -55,7 +55,7 @@ console.log('AnswersAtom ', Answers)
         if(props.IsHOC === true && props.mainQuestionId !== undefined && props.mainQuestionId !== "")
         {
           
-          let newAnswersList = [...Answers].filter((item) => {
+          let newAnswersList = Answers.filter((item) => {
             if (item !== undefined && item.mainQuestionId === props.mainQuestionId) 
               return item;
           });

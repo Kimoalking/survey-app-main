@@ -12,9 +12,9 @@ const DateControl= (props) => {
   const [Answers, setAnswers] = useRecoilState(AnswersState)
 
   const [value, setValue] = React.useState(null);
-
+  console.log('AnswersAtom ', Answers)
   const SetValue = (value) => {
-    debugger;
+
 
     //alert(txtControl.target.value);
     if(props.mainQuestionId !== undefined && props.mainQuestionId !== "" && props.questionId !== undefined && props.questionId !== ""){
@@ -38,7 +38,6 @@ const DateControl= (props) => {
 };
 
 const GetValue = () =>{
-  debugger;
   //https://stackoverflow.com/questions/71460873/how-do-i-select-and-update-an-object-from-a-larger-group-of-objects-in-recoil
   
   if (Answers.length > 0) 
@@ -70,7 +69,7 @@ const GetValue = () =>{
   return (
     <LocalizationProvider dateAdapter={AdapterDateFns}>
       <DatePicker
-        value={GetValue() || ""} 
+        value={GetValue() } 
         onChange={(value) => {
           SetValue(value);
         }}

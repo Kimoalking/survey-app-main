@@ -15,7 +15,7 @@ const [Answers, setAnswers] = useRecoilState(AnswersState)
 //console.log("UpdateAnswer",Answers);
 
 const SetValue = (qId, ansId) => {
-  
+  debugger;
   let filtered = Answers.filter(function (a) {
     if (a.questionId !== qId) return a;
   });
@@ -36,12 +36,12 @@ const SetValue = (qId, ansId) => {
 };
 
 const GetValue = (qId) => {
-
+debugger;
   let filtered = Answers.filter(function (a) {
     if (a.questionId === qId) return a;
   });
   if ((filtered || []).length > 0) {
-    return filtered[0].answerValue;
+    return filtered[0].answerValue[0];
   } else {
     return null;
   }
@@ -77,7 +77,7 @@ answerElements.push(radios);
         onChange={() => {
           SetValue(props.questionId, answer.title);
         }}
-        value={answer.id}
+        value={answer.title}
         name={props.questionId}
         />
         <label htmlFor={props.questionId}>{(props.isSurveyFormat===true ? "" : answer.title)}</label>
@@ -89,4 +89,4 @@ answerElements.push(radios);
   
 return (answerElements);
 }
-export default WithCommentsBlock(RadioButton);
+export default RadioButton//WithCommentsBlock(RadioButton);
