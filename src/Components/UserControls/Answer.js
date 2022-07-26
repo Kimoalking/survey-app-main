@@ -22,7 +22,7 @@ export default function Answer(props) {
   if(props.isSurveyFormat=== true && props.controlType === ControlType.RadioButton)
   {
     return (
-      <RadioButton hasComments={props.hasComments} data={props.data} isSurveyFormat={props.isSurveyFormat || false} questionId={props.questionId} mainQuestionId={props.mainQuestionId}></RadioButton>
+      <RadioButton hasComments={props.hasComments} data={props.data} questionId={props.questionId} mainQuestionId={props.mainQuestionId} isSurveyFormat={props.isSurveyFormat || false} ></RadioButton>
     )
   }
 
@@ -30,22 +30,22 @@ export default function Answer(props) {
   return (
     <Grid item xs={12}>
       {props.controlType === ControlType.CheckBox &&
-        <CheckBox hasComments={props.hasComments} data={props.data} questionId={props.questionId} mainQuestionId={props.mainQuestionId}></CheckBox>
+        <CheckBox hasComments={props.hasComments} data={props.data}  mainQuestionId={props.mainQuestionId} questionId={props.questionId}></CheckBox>
       }
 
       {props.controlType === ControlType.RadioGroupButton &&
-        <RadioGroupButton hasComments={props.hasComments} data={props.data} isSurveyFormat={props.isSurveyFormat || false} mainQuestionId={props.mainQuestionId} questionId={props.questionId}></RadioGroupButton>
+        <RadioGroupButton hasComments={props.hasComments} data={props.data} mainQuestionId={props.mainQuestionId} questionId={props.questionId} isSurveyFormat={props.isSurveyFormat || false} ></RadioGroupButton>
       }
       {props.controlType === ControlType.RadioButton &&
-        <RadioButton hasComments={props.hasComments} data={props.data} isSurveyFormat={props.isSurveyFormat || false} mainQuestionId={props.mainQuestionId} questionId={props.questionId}></RadioButton>
+        <RadioButton hasComments={props.hasComments} data={props.data}  mainQuestionId={props.mainQuestionId} questionId={props.questionId} isSurveyFormat={props.isSurveyFormat || false}></RadioButton>
       }
 
       {props.controlType === ControlType.TextBox &&
-        <TextBox questionId={props.questionId} mainQuestionId={props.mainQuestionId} IsHOC={false} ></TextBox>
+        <TextBox mainQuestionId={props.mainQuestionId} data={props.data} questionId={props.questionId}  IsHOC={false} ></TextBox>
       }
       
       {props.controlType === ControlType.Date &&
-        <DateControl questionId={props.questionId} mainQuestionId={props.mainQuestionId}></DateControl>
+        <DateControl hasComments={props.hasComments} data={props.data}  mainQuestionId={props.mainQuestionId} questionId={props.questionId}></DateControl>
       }
 
       {props.controlType === ControlType.Time &&

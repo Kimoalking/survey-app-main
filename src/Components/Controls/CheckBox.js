@@ -11,7 +11,7 @@ const CheckBox = (props) => {
   const [Answers, setAnswers] = useRecoilState(AnswersState)
 
   const SetValue = (qId, ansId) => {
-  debugger;
+
     let filtered = Answers.filter(function (a) {
       if (a.questionId !== qId) return a;
     });

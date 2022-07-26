@@ -15,7 +15,6 @@ const [Answers, setAnswers] = useRecoilState(AnswersState)
 //console.log("UpdateAnswer",Answers);
 
 const SetValue = (qId, ansId) => {
-  debugger;
   let filtered = Answers.filter(function (a) {
     if (a.questionId !== qId) return a;
   });
@@ -36,7 +35,6 @@ const SetValue = (qId, ansId) => {
 };
 
 const GetValue = (qId) => {
-debugger;
   let filtered = Answers.filter(function (a) {
     if (a.questionId === qId) return a;
   });
