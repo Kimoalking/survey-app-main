@@ -52,7 +52,7 @@ export default function Answer(props) {
         <TimeControl hasComments={props.hasComments} data={props.data}  mainQuestionId={props.mainQuestionId} questionId={props.questionId}></TimeControl>
       }
       {props.controlType === ControlType.Rating &&
-        <RatingControl></RatingControl>
+        <RatingControl hasComments={props.hasComments} data={props.data}  mainQuestionId={props.mainQuestionId} questionId={props.questionId}></RatingControl>
       }
       {props.controlType === ControlType.DateRange &&
         <DateRangeControl></DateRangeControl>
