@@ -10,14 +10,30 @@ import {AnswersState} from  '../../Hooks/AnswersAtom.js'
 const CheckBox = (props) => {
   const [Answers, setAnswers] = useRecoilState(AnswersState)
 
-  const SetValue = (qId, ansId) => {
-
-    let filtered = Answers.filter(function (a) {
+  const SetValue = (qId, ansId, event) => {
+    debugger;
+    let OtherQuestions = Answers.filter(function (a) {
       if (a.questionId !== qId) return a;
     });
     
+    //Prepare AnswersObj 
+    var AnswersObj = []
+    let QuestionObject = [] = Answers.filter(function (a) {
+      if (a.questionId === qId) return a;
+    });
+    if(QuestionObject !== undefined && QuestionObject.length >0 )
+    {
+      AnswersObj = Object.assign([], QuestionObject[0].answerValue); 
+    }
+    if(event.target.checked)
+    {
+      AnswersObj.push(ansId);
+    }else{
+      AnswersObj = AnswersObj.filter(item => item !== ansId) //https://flaviocopes.com/how-to-remove-item-from-array/
+    }
     
-    setAnswers([...filtered, {mainQuestionId: props.mainQuestionId, questionId: qId,answerValue:[ansId], commentValue:null}]);
+    
+    setAnswers([...OtherQuestions, {mainQuestionId: props.mainQuestionId, questionId: qId,answerValue:AnswersObj, commentValue:null}]);
   
     //Start: remove the fist index if it is empty object
     if(Answers.length>1)
@@ -31,25 +47,33 @@ const CheckBox = (props) => {
     //End: remove the fist index if it is empty object
   };
   
-  const GetValue = (qId) => {
-  
+  const GetValue = (qId, AnsID) => {
+    
+    let result = null;
     let filtered = Answers.filter(function (a) {
       if (a.questionId === qId) return a;
     });
+    
     if ((filtered || []).length > 0) {
-      return filtered[0].answerValue;
+      if (filtered[0].answerValue.includes(AnsID)) //https://attacomsian.com/blog/javascript-array-search#:~:text=IE9%20and%20up.-,includes()%20Method,as%20a%20simple%20boolean%20value.
+        result =  true;
+      else
+        result =  false;
     } else {
-      return null;
+      return false;
     }
+    
+    return result;
+    
   };
 
 
   const answerElements = props.data.map((answer) =>
     <FormControlLabel key={answer.id} value={answer.id} control={
     <Checkbox  
-    checked={GetValue(props.questionId) === answer.title}
-    onChange={() => {
-      SetValue(props.questionId, answer.id);
+    checked={GetValue(props.questionId, answer.id) }
+    onChange={(event) => {
+      SetValue(props.questionId, answer.id,event);
     }}
     value={answer.title}
     name={answer.id}

@@ -87,4 +87,4 @@ answerElements.push(radios);
   
 return (answerElements);
 }
-export default RadioButton//WithCommentsBlock(RadioButton);
+export default WithCommentsBlock(RadioButton);
