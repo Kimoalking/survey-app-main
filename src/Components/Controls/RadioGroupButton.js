@@ -11,7 +11,6 @@ import {AnswersState} from  '../../Hooks/AnswersAtom.js'
 
 const RadioGroupButton =(props)=> {
   const [Answers, setAnswers] = useRecoilState(AnswersState)
-  debugger;
 
   const SetValue = (qId, ansId) => {
     let filtered = Answers.filter(function (a) {
@@ -50,7 +49,7 @@ const RadioGroupButton =(props)=> {
 
 
   const answerElements = props.data.map((answer) =>{
-    debugger;
+  
     const RadioLabel = (props.isSurveyFormat===true ? "" : answer.title); //answer.title
     if(props.isSurveyFormat)
     {

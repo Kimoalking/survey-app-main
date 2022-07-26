@@ -55,7 +55,7 @@ export default function Answer(props) {
         <RatingControl hasComments={props.hasComments} data={props.data}  mainQuestionId={props.mainQuestionId} questionId={props.questionId}></RatingControl>
       }
       {props.controlType === ControlType.DateRange &&
-        <DateRangeControl></DateRangeControl>
+        <DateRangeControl hasComments={props.hasComments} data={props.data}  mainQuestionId={props.mainQuestionId} questionId={props.questionId}></DateRangeControl>
       }
       {props.controlType === ControlType.MatrixControl &&
         <MatrixControl  hasComments={props.hasComments} controlType={props.controlType} data={props.data} isSurveyFormat={props.isSurveyFormat} mainColumnTitle={props.mainColumnTitle} mainQuestionId={props.mainQuestionId}></MatrixControl>
