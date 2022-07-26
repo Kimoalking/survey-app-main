@@ -4,8 +4,16 @@ import Paper from '@mui/material/Paper';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import Pages from '../../Utils/DemoData'
+
+
+import {useRecoilState, useRecoilValue} from 'recoil'
+import {AnswersState} from  '../../Hooks/AnswersAtom.js'
+
+
 export default function Survey() {
-    
+    const [Answers, setAnswers] = useRecoilState(AnswersState)
+    const Result =  "Answer Builder: "+  JSON.stringify(Answers);
+
     const[activePageSequence, setActivePageSequence] = useState(1);
 
     const surveyPages = Pages.map((page) =>
@@ -23,6 +31,9 @@ export default function Survey() {
             </Paper>
             <Button disabled={activePageSequence===1} onClick={()=>setActivePageSequence(activePageSequence-1)}>Previous</Button>
             <Button onClick={()=>setActivePageSequence(activePageSequence+1)}>Next</Button>
+            <br/><br/>
+            {Result}
         </Container>
+
     )
 }

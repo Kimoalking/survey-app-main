@@ -1,7 +1,7 @@
 import { v4 as uuidv4 } from 'uuid';
 const Pages = [
+    //1: Textbox, 2:Date. 6: CheckBox,7: RadioGroupButton, 12 RadioButton control
     {
-//1: Textbox, 2:Date. 6: CheckBox,7: RadioGroupButton, 12 RadioButton control
         "id": uuidv4(), 
         "title": "1: Textbox, 2:Date. 6: CheckBox,7: RadioGroupButton , 12 RadioButton",
         "sequenceNo": 1,
@@ -292,6 +292,18 @@ const Pages = [
                 ]
             }
             
+        ]
+    },
+    //Result
+    {
+        "id": uuidv4(), 
+        "title": "Result",
+        "sequenceNo": 5,
+        "questions": [
+            {
+                "id": uuidv4(),
+                "title": "Result of the Survay"
+            }
         ]
     }
 

@@ -8,7 +8,7 @@ export default function TextBox(props){
 //console.log("TextBox Props", props);
 const [Answers, setAnswers] = useRecoilState(AnswersState)
 
-console.log('AnswersAtom ', Answers)
+console.log('AnswersAtom ', JSON.stringify(Answers))
     const SetValue = (Control) => {
   
 

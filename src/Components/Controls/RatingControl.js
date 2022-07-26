@@ -10,19 +10,20 @@ import {AnswersState} from  '../../Hooks/AnswersAtom.js'
 
 //https://mui.com/material-ui/react-rating/
 const RatingControl = (props) => {
+  debugger;
   //const [value, setValue] = React.useState(null); //null
   const [Answers, setAnswers] = useRecoilState(AnswersState)
   console.log('AnswersAtom ', Answers)
   
-  const SetValue = (value) => {
+  const SetValue = (qId,value) => {
 
-
+debugger;
     //alert(txtControl.target.value);
     if(props.mainQuestionId !== undefined && props.mainQuestionId !== "" && props.questionId !== undefined && props.questionId !== ""){
       let filtered = Answers.filter(function (a) {
         if (a.questionId !== props.questionId) return a;
       });
-      setAnswers([...filtered, {mainQuestionId: props.mainQuestionId, questionId: props.questionId,answerValue:[value], commentValue:null}]);
+      setAnswers([...filtered, {mainQuestionId: props.mainQuestionId, questionId: qId,answerValue:[value], commentValue:null}]);
     }
 
     //Start: remove the fist index if it is empty object
@@ -73,7 +74,7 @@ const GetValue = () =>{
       name="simple-controlled"
       value={GetValue() || 0 } 
       onChange={(event, value) => {
-        SetValue(value);
+        SetValue(props.questionId,value);
       }}
       // value={value}
       // onChange={(event, newValue) => {

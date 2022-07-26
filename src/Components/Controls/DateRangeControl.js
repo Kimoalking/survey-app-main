@@ -32,7 +32,7 @@ import {AnswersState} from  '../../Hooks/AnswersAtom.js'
   // }
 
 const SetValue = (value) => {
-debugger;
+
 
     //alert(txtControl.target.value);
     if(props.mainQuestionId !== undefined && props.mainQuestionId !== "" && props.questionId !== undefined && props.questionId !== ""){
@@ -56,7 +56,6 @@ debugger;
 };
 
 const GetValue = () =>{
-  debugger;
   //https://stackoverflow.com/questions/71460873/how-do-i-select-and-update-an-object-from-a-larger-group-of-objects-in-recoil
   
   if (Answers.length > 0) 

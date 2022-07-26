@@ -24,7 +24,12 @@ export default function MatrixQuestionItem(props) {
   return (
     <tr key={uuidv4()}>
       <td><Question questionTitle={props.data.title}></Question></td>
-      <td><Answer hasComments={props.data.hasComments} controlType={props.controlType} data={props.data.answers} mainQuestionId={props.mainQuestionId}></Answer></td> 
+      <td><Answer hasComments={props.data.hasComments} 
+          controlType={props.controlType} 
+          data={props.data.answers} 
+          isSurveyFormat={props.isSurveyFormat} 
+          questionId={props.data.id} 
+          mainQuestionId={props.mainQuestionId}></Answer></td> 
     </tr>
   );
   }
