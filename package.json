@@ -21,8 +21,12 @@
     "uuid": "^8.3.2",
     "web-vitals": "^2.1.4"
   },
+  "KamalComments": {
+    "start":"Old:react-scripts start. I add 'set PORT=3001' &&  to set a new port no https://stackoverflow.com/questions/40714583/how-to-specify-a-port-to-run-a-create-react-app-based-project",
+    "secondline": "How you doiung"
+  },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "set PORT=3001 && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
