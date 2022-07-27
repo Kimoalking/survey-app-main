@@ -5,7 +5,7 @@ import WithCommentsBlock from '../../HOC/WithCommentsBox';
 
 
 import {useRecoilState, useRecoilValue} from 'recoil'
-import {AnswersState} from  '../../Hooks/AnswersAtom.js'
+import {AnswersState} from  '../../States/AnswersAtom.js'
 
 const CheckBox = (props) => {
   const [Answers, setAnswers] = useRecoilState(AnswersState)
@@ -23,7 +23,7 @@ const CheckBox = (props) => {
     });
     if(QuestionObject !== undefined && QuestionObject.length >0 )
     {
-      AnswersObj = Object.assign([], QuestionObject[0].answerValue); //I was resving error when direct assigning array  //https://stackoverflow.com/questions/52492093/typeerror-cannot-add-property-1-object-is-not-extensible-at-array-push-anon
+      AnswersObj = Object.assign([], QuestionObject[0].answerIds); //I was resving error when direct assigning array  //https://stackoverflow.com/questions/52492093/typeerror-cannot-add-property-1-object-is-not-extensible-at-array-push-anon
     }
     if(event.target.checked)
     {
@@ -33,7 +33,7 @@ const CheckBox = (props) => {
     }
     
     
-    setAnswers([...OtherQuestions, {mainQuestionId: props.mainQuestionId, questionId: qId,answerValue:AnswersObj, commentValue:null}]);
+    setAnswers([...OtherQuestions, {mainQuestionId: props.mainQuestionId, questionId: qId,answerIds:AnswersObj,answerValues :null, commentValue:null}]);
   
     //Start: remove the fist index if it is empty object
     if(Answers.length>1)
@@ -55,7 +55,7 @@ const CheckBox = (props) => {
     });
     
     if ((filtered || []).length > 0) {
-      if (filtered[0].answerValue.includes(AnsID)) //https://attacomsian.com/blog/javascript-array-search#:~:text=IE9%20and%20up.-,includes()%20Method,as%20a%20simple%20boolean%20value.
+      if (filtered[0].answerIds.includes(AnsID)) //https://attacomsian.com/blog/javascript-array-search#:~:text=IE9%20and%20up.-,includes()%20Method,as%20a%20simple%20boolean%20value.
         result =  true;
       else
         result =  false;

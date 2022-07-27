@@ -4,7 +4,7 @@ import WithCommentsBlock from '../../HOC/WithCommentsBox';
 import '../../Context/css/custom.css'
 
 import {useRecoilState, useRecoilValue} from 'recoil'
-import {AnswersState} from  '../../Hooks/AnswersAtom.js'
+import {AnswersState} from  '../../States/AnswersAtom.js'
 //https://www.section.io/engineering-education/react-recoil-state-management/
 let ControlProps = null
 const RadioButton =(props)=> {
@@ -20,7 +20,7 @@ const SetValue = (qId, ansId) => {
   });
   
   
-  setAnswers([...filtered, {mainQuestionId: props.mainQuestionId, questionId: qId,answerValue:[ansId], commentValue:null}]);
+  setAnswers([...filtered, {mainQuestionId: props.mainQuestionId, questionId: qId,answerIds:[ansId],answerValues:null, commentValue:null}]);
 
   //Start: remove the fist index if it is empty object
   if(Answers.length>1)
@@ -39,7 +39,7 @@ const GetValue = (qId) => {
     if (a.questionId === qId) return a;
   });
   if ((filtered || []).length > 0) {
-    return filtered[0].answerValue[0];
+    return filtered[0].answerIds[0];
   } else {
     return null;
   }
@@ -53,11 +53,11 @@ if(props.isSurveyFormat === true && props.data.length > 1)
   
       <td key={index}>
         <Radio
-        checked={GetValue(props.questionId) == answer.title}
+        checked={GetValue(props.questionId) == answer.id}
         onChange={() => {
-          SetValue(props.questionId, answer.title);
+          SetValue(props.questionId, answer.id);
         }}
-        value={answer.title}
+        value={answer.id}
         name={props.questionId}
       />
         <label htmlFor={props.questionId}>{(props.isSurveyFormat===true ? "" : answer.title)}</label>
@@ -71,11 +71,11 @@ answerElements.push(radios);
   
       <span key={index}>
         <Radio
-        checked={GetValue(props.questionId) === answer.title}
+        checked={GetValue(props.questionId) === answer.id}
         onChange={() => {
-          SetValue(props.questionId, answer.title);
+          SetValue(props.questionId, answer.id);
         }}
-        value={answer.title}
+        value={answer.id}
         name={props.questionId}
         />
         <label htmlFor={props.questionId}>{(props.isSurveyFormat===true ? "" : answer.title)}</label>

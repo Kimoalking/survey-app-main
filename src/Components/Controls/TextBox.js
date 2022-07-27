@@ -1,7 +1,7 @@
 import TextField from '@mui/material/TextField';
 
 import {useRecoilState, useRecoilValue} from 'recoil'
-import {AnswersState} from  '../../Hooks/AnswersAtom.js'
+import {AnswersState} from  '../../States/AnswersAtom.js'
 
 
 export default function TextBox(props){
@@ -11,7 +11,7 @@ const [Answers, setAnswers] = useRecoilState(AnswersState)
 console.log('AnswersAtom ', JSON.stringify(Answers))
     const SetValue = (Control) => {
   
-
+debugger;
         //alert(txtControl.target.value);
         if(props.IsHOC === true && props.mainQuestionId !== undefined && props.mainQuestionId !== "")
         {
@@ -27,11 +27,8 @@ console.log('AnswersAtom ', JSON.stringify(Answers))
           let filtered = Answers.filter(function (a) {
             if (a.questionId !== props.questionId) return a;
           });
-          setAnswers([...filtered, {mainQuestionId: props.mainQuestionId, questionId: props.questionId,answerValue:[], commentValue:Control.target.value}]);
+          setAnswers([...filtered, {mainQuestionId: props.mainQuestionId, questionId: props.questionId,answerIds:[],answerValues:Control.target.value, commentValue:null}]);
         }
-       
-        
-        
 
         //Start: remove the fist index if it is empty object
         if(Answers.length>1)
@@ -75,9 +72,9 @@ console.log('AnswersAtom ', JSON.stringify(Answers))
             if (item !== undefined && item.questionId === props.questionId) return item ;
           });
           if (newAnswersList.length > 0 ) {
-            if (newAnswersList[0] !== undefined &&  newAnswersList[0].commentValue !== null)
+            if (newAnswersList[0] !== undefined &&  newAnswersList[0].answerValues !== null)
             {
-              return newAnswersList[0].commentValue ;
+              return newAnswersList[0].answerValues ;
             }else{
               return "";
             }

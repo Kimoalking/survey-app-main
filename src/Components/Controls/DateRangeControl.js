@@ -6,7 +6,7 @@ import { addDays } from 'date-fns';
 import WithCommentsBlock from '../../HOC/WithCommentsBox';
 
 import {useRecoilState, useRecoilValue} from 'recoil'
-import {AnswersState} from  '../../Hooks/AnswersAtom.js'
+import {AnswersState} from  '../../States/AnswersAtom.js'
 
 //https://www.npmjs.com/package/react-date-range
 //npm install react-date-range
@@ -39,7 +39,7 @@ const SetValue = (value) => {
       let filtered = Answers.filter(function (a) {
         if (a.questionId !== props.questionId) return a;
       });
-      setAnswers([...filtered, {mainQuestionId: props.mainQuestionId, questionId: props.questionId,answerValue:[value], commentValue:null}]);
+      setAnswers([...filtered, {mainQuestionId: props.mainQuestionId, questionId: props.questionId,answerIds:[],answerValues:[value], commentValue:null}]);
     }
 
     //Start: remove the fist index if it is empty object
@@ -65,9 +65,9 @@ const GetValue = () =>{
         if (item !== undefined && item.questionId === props.questionId) return item ;
       });
       if (newAnswersList.length > 0 ) {
-        if (newAnswersList[0] !== undefined &&  newAnswersList[0].answerValue !== null)
+        if (newAnswersList[0] !== undefined &&  newAnswersList[0].answerValues !== null)
         {
-          return newAnswersList[0].answerValue ;
+          return newAnswersList[0].answerValues ;
         }else{
           return [
               {
